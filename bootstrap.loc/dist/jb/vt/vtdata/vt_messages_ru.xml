@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="ru_project_title"><![CDATA[New Project]]></data>
+
+
+
+  <data name="ru_pano41_title"><![CDATA[Вход]]></data>
+
+
+  <data name="ru_pano42_title"><![CDATA[Зеркало]]></data>
+
+
+  <data name="ru_pano45_title"><![CDATA[Коридор-1]]></data>
+
+
+  <data name="ru_pano50_title"><![CDATA[Хореография-1]]></data>
+
+
+  <data name="ru_pano38_title"><![CDATA[Вокал-1]]></data>
+
+
+  <data name="ru_pano46_title"><![CDATA[Коридор-2]]></data>
+
+
+  <data name="ru_pano43_title"><![CDATA[Коридор у админов]]></data>
+
+
+  <data name="ru_pano47_title"><![CDATA[Раздевалка]]></data>
+
+
+  <data name="ru_pano39_title"><![CDATA[Вокал-2]]></data>
+
+
+  <data name="ru_pano37_title"><![CDATA[Актёрское]]></data>
+
+
+  <data name="ru_pano49_title"><![CDATA[Сольфеджио-2]]></data>
+
+
+  <data name="ru_pano40_title"><![CDATA[Вокал-3]]></data>
+
+
+  <data name="ru_pano44_title"><![CDATA[Коридор у кухни]]></data>
+
+
+  <data name="ru_pano51_title"><![CDATA[Хореография-2]]></data>
+
+
+
+
+
+
+  <data name="ru_controlBar_urbanprevSceneTip"><![CDATA[Previous panorama]]></data>
+  <data name="ru_controlBar_urbannextSceneTip"><![CDATA[Next panorama]]></data>
+  <data name="ru_controlBar_urbanzoomInTip"><![CDATA[Zoom in]]></data>
+  <data name="ru_controlBar_urbanzoomOutTip"><![CDATA[Zoom out]]></data>
+  <data name="ru_controlBar_urbanmoveLeftTip"><![CDATA[Move left]]></data>
+  <data name="ru_controlBar_urbanmoveRightTip"><![CDATA[Move right]]></data>
+  <data name="ru_controlBar_urbanmoveUpTip"><![CDATA[Move up]]></data>
+  <data name="ru_controlBar_urbanmoveDownTip"><![CDATA[Move down]]></data>
+  <data name="ru_controlBar_urbanopenFsTip"><![CDATA[Enter fullscreen]]></data>
+  <data name="ru_controlBar_urbancloseFsTip"><![CDATA[Exit fullscreen]]></data>
+  <data name="ru_controlBar_urbanautorotateOnTip"><![CDATA[Start autorotation]]></data>
+  <data name="ru_controlBar_urbanautorotateOffTip"><![CDATA[Stop autorotation]]></data>
+  <data name="ru_controlBar_urbandisplayHelpTip"><![CDATA[Show help screen]]></data>
+  <data name="ru_controlBar_urbanhideHelpTip"><![CDATA[Hide help screen]]></data>
+  <data name="ru_controlBar_urbandisplayControlsTip"><![CDATA[Show controls]]></data>
+  <data name="ru_controlBar_urbanhideControlsTip"><![CDATA[Hide controls]]></data>
+  <data name="ru_controlBar_urbanctrlmodeDragTip"><![CDATA[Change control mode]]></data>
+  <data name="ru_controlBar_urbanctrlmodeMoveTip"><![CDATA[Change control mode]]></data>
+
+
+  <data name="ru_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="ru_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="ru_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="ru_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="ru_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="ru_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="ru_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="ru_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="ru_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="ru_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="ru_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="ru_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="ru_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="ru_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="ru_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="ru_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="ru_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="ru_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="ru_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="ru_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="ru_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="ru_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="ru_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="ru_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="ru_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="ru_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

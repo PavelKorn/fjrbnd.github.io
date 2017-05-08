@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_direction_sequence_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="17"
+         framewidth="56"
+         frameheight="56"
+         stopspotsequence="false"
+         crop="0|0|56|56"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+
+         />
+
+  <action name="onhoverIconDefaultPointSpotStyle">
+    showtooltip('hotspot');
+  </action>
+
+
+  <action name="onoutIconDefaultPointSpotStyle">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- Urban Control Bar -->
+<!-- id : controlBar_urban -->
+<!-- ********** -->
+
+  <krpano controlBar_urbanbarbuilt="false" controlBar_urbanbackgroundwidthwhenclosed="0" controlBar_urbanbackgroundwidthwhenopened="0" controlBar_urbanIsOpened="false" />
+  <events name="controlBar_urbanbarevents" 
+    onxmlcomplete="controlBar_urbanbuildMenuBar();" 
+
+
+    keep="true" />
+
+
+
+  <action name="controlBar_urbanbuildMenuBar">
+    ifnot (controlBar_urbanbarbuilt, controlBar_urbanbuildMenu(); set(controlBar_urbanbarbuilt, true););
+  </action>
+
+  <style name="controlBar_urban_btn_style"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         height="40" width="40"
+         crop="0|0|50|50"
+         onovercrop="0|50|50|50"
+         ondowncrop="0|100|50|50"
+         onhover="showTooltip('plugin', controlBar_urbanmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+<style name="controlBar_urban_btn_style_off"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         height="40" width="40"
+         onhover="showTooltip('plugin', controlBar_urbanmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+
+    <layer name="controlBar_urban_menu_bg"
+            keep="true"
+            type="container"
+            zorder="1"
+            width="40"
+            height="40"
+            align="bottom"
+            x="0" y="10"
+            maskchildren="true"
+            rotate="0"
+            visible="false"
+            >
+
+
+    <layer name="controlBar_urbanbtn_ctrlmode_move_to"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_move_to.png"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanctrlmodeMoveTip"
+            onclick="setControlModeMoveTo();
+"
+            visible="false"
+            devices="desktop"
+            />
+    <layer name="controlBar_urbanbtn_ctrlmode_drag_to"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_drag_to.png"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanctrlmodeDragTip"
+            onclick="setControlModeDragTo();
+"
+            visible="false"
+            devices="desktop"
+            />
+
+    <layer name="controlBar_urbanbtn_in"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_zoom_in.png"
+            ondown="viewControlZoomIn(false);"
+            onup="viewControlZoomStop();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanzoomInTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_urbanbtn_out"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_zoom_out.png"
+            ondown="viewControlZoomOut(false);
+"
+            onup="viewControlZoomStop();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanzoomOutTip"
+            devices="desktop"
+            visible="false"
+            />
+
+    <layer name="controlBar_urbanbtn_left"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_move_left.png"
+            ondown="viewControlMoveLeft(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanmoveLeftTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_urbanbtn_right"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_move_right.png"
+            ondown="viewControlMoveRight(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanmoveRightTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_urbanbtn_up"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_move_up.png"
+            ondown="viewControlMoveUp(false);
+"
+            onup="viewControlMoveVertStop();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanmoveUpTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_urbanbtn_down"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_move_down.png"
+            ondown="viewControlMoveDown(false);
+"
+            onup="viewControlMoveVertStop();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanmoveDownTip"
+            devices="desktop"
+            visible="false"
+            x="0"
+            y="0"
+            />
+
+
+
+    <layer name="controlBar_urbanbtn_prev_pano"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_previous_scene.png"
+            onclick="loadPreviousScene();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbanprevSceneTip"
+            visible="false"
+            />
+    <layer name="controlBar_urbanbtn_next_pano"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_next_scene.png"
+            onclick="loadNextScene();
+"
+            style="controlBar_urban_btn_style"
+            tooltip="controlBar_urbannextSceneTip"
+            visible="false"
+            />
+
+
+
+    <layer name="controlBar_urbanbtn_openfs"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_enter_fs.png"
+            onclick="enterFullscreen();
+"
+            style="controlBar_urban_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="controlBar_urbanopenFsTip"
+            />
+    <layer name="controlBar_urbanbtn_closefs"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_close_fs.png"
+            onclick="exitFullscreen();
+"
+            style="controlBar_urban_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="controlBar_urbancloseFsTip"
+            />
+
+    <layer name="controlBar_urbanbtn_autorotate_on"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_start_autorotation.png"
+            onclick="resumeautorotation();
+"
+            style="controlBar_urban_btn_style"
+            visible="false"
+            tooltip="controlBar_urbanautorotateOnTip"
+            />
+    <layer name="controlBar_urbanbtn_autorotate_off"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_stop_autorotation.png"
+            onclick="pauseautorotation();
+"
+            style="controlBar_urban_btn_style"
+            visible="false"
+            tooltip="controlBar_urbanautorotateOffTip"
+            />
+
+
+
+    <layer name="controlBar_urbanbtn_display_help"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_help.png"
+            onclick="controlBar_urbandisplayHelp();"
+            style="controlBar_urban_btn_style"
+            devices="desktop"
+            visible="false"
+            tooltip="controlBar_urbandisplayHelpTip"
+            />
+    <layer name="controlBar_urbanbtn_close_help"
+            url="%FIRSTXML%/graphics/urbancontrolbar/btn_help.png"
+            onclick="controlBar_urbancloseHelp();"
+            style="controlBar_urban_btn_style"
+            visible="false"
+            devices="desktop"
+            tooltip="controlBar_urbanhideHelpTip"
+            />
+
+
+
+    <layer name="controlBar_urbanbtn_hidecontrols"
+           url="%FIRSTXML%/graphics/urbancontrolbar/btn_hide_controls.png"
+           style="controlBar_urban_btn_style"
+           onclick="controlBar_urbanhideMenuControls();hideTourControls();
+"
+           visible="false"
+           tooltip="controlBar_urbanhideControlsTip"
+           />
+    <layer name="controlBar_urbanbtn_showcontrols"
+           url="%FIRSTXML%/graphics/urbancontrolbar/btn_show_controls.png"
+           style="controlBar_urban_btn_style"
+           onclick="controlBar_urbanshowMenuControls();showTourControls();
+"
+           tooltip="controlBar_urbandisplayControlsTip"
+           visible="false"
+           />
+ </layer>
+
+
+
+
+
+  <events name="controlBar_urbancontrolmodechangedevent" oncontrolmodechanged="controlBar_urbanupdateControlModeButtons();" keep="true"/>
+	<action name="controlBar_urbanHideControlModeButtons">
+		set(layer[controlBar_urbanbtn_ctrlmode_move_to].visible, false);
+		set(layer[controlBar_urbanbtn_ctrlmode_drag_to].visible, false);
+	</action>
+	<action name="controlBar_urbanShowControlModeButtons">
+		if (tour_controlmodemousetype == "moveto",
+			set(layer[controlBar_urbanbtn_ctrlmode_drag_to].visible, true);
+			set(layer[controlBar_urbanbtn_ctrlmode_move_to].visible, false);
+		,
+			set(layer[controlBar_urbanbtn_ctrlmode_move_to].visible, true);
+			set(layer[controlBar_urbanbtn_ctrlmode_drag_to].visible, false);
+		);
+	</action>
+	<action name="controlBar_urbanupdateControlModeButtons">
+	if (device.desktop,
+		if (controlBar_urbanIsOpened,
+			controlBar_urbanShowControlModeButtons();
+		,
+			controlBar_urbanHideControlModeButtons();
+		);
+	,
+		controlBar_urbanHideControlModeButtons();
+	);
+	</action>
+
+
+  <action name="controlBar_urbanhideMenuControls">
+    set(controlBar_urbanIsOpened, false);
+    set(layer[controlBar_urbanbtn_hidecontrols].visible, false);
+    set(layer[controlBar_urbanbtn_showcontrols].visible, true);
+if (scene.count GT 1,
+	set(layer[controlBar_urbanbtn_next_pano].visible, false);
+	set(layer[controlBar_urbanbtn_prev_pano].visible, false);
+);
+
+
+if (device.desktop,
+	set(layer[controlBar_urbanbtn_in].visible, false);
+	set(layer[controlBar_urbanbtn_out].visible, false);
+);
+if (device.desktop,
+	set(layer[controlBar_urbanbtn_up].visible, false);
+	set(layer[controlBar_urbanbtn_down].visible, false);
+);
+if (device.desktop,
+	set(layer[controlBar_urbanbtn_left].visible, false);
+	set(layer[controlBar_urbanbtn_right].visible, false);
+);
+	controlBar_urbanupdateFullscreenButtons();
+	controlBar_urbanupdateHelpButtons();
+
+
+	controlBar_urbanupdateAutorotationButtons();
+
+
+	controlBar_urbanupdateControlModeButtons();
+
+
+
+  set(layer[controlBar_urban_menu_bg].width, get(controlBar_urbanbackgroundwidthwhenclosed));
+
+  set(layer[controlBar_urban_menu_bg].visible, true);
+  </action>
+  <action name="controlBar_urbanshowMenuControls">
+    set(controlBar_urbanIsOpened, true);
+    set(layer[controlBar_urbanbtn_hidecontrols].visible, true);
+    set(layer[controlBar_urbanbtn_showcontrols].visible, false);
+	set(layer[controlBar_urban_menu_bg].visible, true);
+if (scene.count GT 1,
+	set(layer[controlBar_urbanbtn_next_pano].visible, true);
+	set(layer[controlBar_urbanbtn_prev_pano].visible, true);
+);
+
+
+if (device.desktop,
+	set(layer[controlBar_urbanbtn_in].visible, true);
+	set(layer[controlBar_urbanbtn_out].visible, true);
+);
+if (device.desktop,
+	set(layer[controlBar_urbanbtn_up].visible, true);
+	set(layer[controlBar_urbanbtn_down].visible, true);
+);
+if (device.desktop,
+	set(layer[controlBar_urbanbtn_left].visible, true);
+	set(layer[controlBar_urbanbtn_right].visible, true);
+);
+	controlBar_urbanupdateFullscreenButtons();
+	controlBar_urbanupdateHelpButtons();
+
+
+	controlBar_urbanupdateAutorotationButtons();
+
+
+	controlBar_urbanupdateControlModeButtons();
+
+
+
+    set(layer[controlBar_urban_menu_bg].width, get(controlBar_urbanbackgroundwidthwhenopened));
+  </action>
+
+	<layer name="controlBar_urbanhelpScreenBg" align="center" keep="true" onclick="controlBar_urbancloseHelp();" url="%FIRSTXML%/graphics/urbancontrolbar/help_screen_bg.png" visible="false" rotate="-25" height="50%" width="prop" zorder="97">
+		<layer name="controlBar_urbanhelpScreenShadow" align="center" keep="true" onclick="controlBar_urbancloseHelp();" url="%FIRSTXML%/graphics/urbancontrolbar/help_screen_shadow.png"   rotate="12"  height="100%" width="prop" x="0" zorder="0" blendmode="multiply"/>
+		<layer name="controlBar_urbanhelpScreenMouse" align="center" keep="true" onclick="controlBar_urbancloseHelp();" url="%FIRSTXML%/graphics/urbancontrolbar/help_screen_mouse.png" rotate="25"  height="100%" width="prop" x="0" zorder="1">
+			<layer name="controlBar_urbanhelpScreenKeyboard" align="center" keep="true" onclick="controlBar_urbancloseHelp();" url="%FIRSTXML%/graphics/urbancontrolbar/help_screen_keyboard.png" rotate="-25" height="100%" width="prop" x="0">
+				<layer name="controlBar_urbanhelpScreenFg" align="center" keep="true" onclick="controlBar_urbancloseHelp();" url="%FIRSTXML%/graphics/urbancontrolbar/help_screen_outline.png" rotate="45" height="100%" width="prop" x="0" onover="tween(rotate, 0, 0.2)" onout="tween(rotate, 2, 0.2)" displayed="false" />
+			</layer>
+		</layer>
+	</layer>
+
+	<action name="controlBar_urbandisplayHelp">
+	if (device.desktop,
+		set(layer[controlBar_urbanhelpScreenFg].displayed, true);
+		set(layer[controlBar_urbanhelpScreenBg].visible, true);
+		set(layer[controlBar_urbanhelpScreenShadow].visible, true);
+		set(layer[controlBar_urbanhelpScreenMouse].visible, true);
+		set(layer[controlBar_urbanhelpScreenKeyboard].visible, true);
+		set(layer[controlBar_urbanhelpScreenFg].visible , true);
+		tween(layer[controlBar_urbanhelpScreenBg].rotate, 0, 1);
+		tween(layer[controlBar_urbanhelpScreenShadow].rotate, 0, 1);
+		tween(layer[controlBar_urbanhelpScreenMouse].rotate, 0, 1);
+		tween(layer[controlBar_urbanhelpScreenKeyboard].rotate, 0, 1);
+		tween(layer[controlBar_urbanhelpScreenFg].rotate, 2, 1);
+		controlBar_urbanupdateHelpButtons();
+	);
+	</action>
+	<action name="controlBar_urbancloseHelp">
+	if (device.desktop,
+		set(layer[controlBar_urbanhelpScreenFg].displayed, false);
+		tween(layer[controlBar_urbanhelpScreenKeyboard].rotate, -25, 1, easeOutQuad, set(layer[controlBar_urbanhelpScreenKeyboard].visible,false););
+		tween(layer[controlBar_urbanhelpScreenMouse].rotate, 25, 1, easeOutQuad, set(layer[controlBar_urbanhelpScreenMouse].visible,false););
+		tween(layer[controlBar_urbanhelpScreenShadow].rotate, 12, 1, easeOutQuad, set(layer[controlBar_urbanhelpScreenShadow].visible,false););
+		tween(layer[controlBar_urbanhelpScreenBg].rotate, -25, 1, easeOutQuad, set(layer[controlBar_urbanhelpScreenBg].visible,false););
+		tween(layer[controlBar_urbanhelpScreenFg].rotate, 45, 1, easeOutQuad, set(layer[controlBar_urbanhelpScreenFg].visible,false););
+		controlBar_urbanupdateHelpButtons();
+	);
+	</action>
+	<action name="controlBar_urbanHideHelpButtons">
+		set(layer[controlBar_urbanbtn_display_help].visible, false);
+		set(layer[controlBar_urbanbtn_close_help].visible, false);
+	</action>
+	<action name="controlBar_urbanShowHelpButtons">
+		if (layer[controlBar_urbanhelpScreenFg].displayed,
+			set(layer[controlBar_urbanbtn_close_help].visible, true);
+			set(layer[controlBar_urbanbtn_display_help].visible, false);
+		,
+			set(layer[controlBar_urbanbtn_display_help].visible, true);
+			set(layer[controlBar_urbanbtn_close_help].visible, false);
+		);
+	</action>
+	<action name="controlBar_urbanupdateHelpButtons">
+	if (device.desktop,
+		if (controlBar_urbanIsOpened,
+			controlBar_urbanShowHelpButtons();
+		,
+			controlBar_urbanHideHelpButtons();
+		);
+	,
+		controlBar_urbanHideHelpButtons();
+	);
+	</action>
+
+
+
+  <events name="controlBar_urbanmenufullscreenchangeevent"
+          onenterfullscreen="controlBar_urbanupdateFullscreenButtons();"
+          onexitfullscreen="controlBar_urbanupdateFullscreenButtons();"
+          keep="true"/>
+	<action name="controlBar_urbanHideFullscreenButtons">
+		set(layer[controlBar_urbanbtn_openfs].visible , false);
+		set(layer[controlBar_urbanbtn_closefs].visible, false);
+	</action>
+	<action name="controlBar_urbanShowFullscreenButtons">
+		if (device.fullscreensupport,
+			if(tour_fullscreen,
+				set(layer[controlBar_urbanbtn_openfs].visible , false);
+				set(layer[controlBar_urbanbtn_closefs].visible, true);
+			,
+				set(layer[controlBar_urbanbtn_openfs].visible ,true);
+				set(layer[controlBar_urbanbtn_closefs].visible,false);
+			);
+		,
+			controlBar_urbanHideFullscreenButtons();
+		);
+	</action>
+	<action name="controlBar_urbanupdateFullscreenButtons">
+		if (controlBar_urbanIsOpened,
+			controlBar_urbanShowFullscreenButtons();
+		,
+			controlBar_urbanHideFullscreenButtons();
+		);
+	</action>
+
+	<events name="controlBar_urbanAutorotationEvents"
+		onstartautorotation="controlBar_urbanupdateAutorotationButtons();"
+		onresumeautorotation="controlBar_urbanupdateAutorotationButtons();"
+		onstopautorotation="controlBar_urbanupdateAutorotationButtons();"
+		onpauseautorotation="controlBar_urbanupdateAutorotationButtons();"
+		keep="true"/>
+	<action name="controlBar_urbanHideAutorotationButtons">
+		set(layer[controlBar_urbanbtn_autorotate_off].visible, false);
+		set(layer[controlBar_urbanbtn_autorotate_on].visible , false);
+	</action>
+	<action name="controlBar_urbanShowAutorotationButtons">
+		if(autorotate.enabled == false,
+			set(layer[controlBar_urbanbtn_autorotate_off].visible, false);
+			set(layer[controlBar_urbanbtn_autorotate_on].visible , true);
+		,
+			set(layer[controlBar_urbanbtn_autorotate_off].visible, true);
+			set(layer[controlBar_urbanbtn_autorotate_on].visible , false);
+		);
+	</action>
+	<action name="controlBar_urbanupdateAutorotationButtons">
+		if (controlBar_urbanIsOpened,
+			controlBar_urbanShowAutorotationButtons();
+		,
+			controlBar_urbanHideAutorotationButtons();
+		);
+	</action>
+
+
+
+<layer name="controlBar_urbanmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	url="%FIRSTXML%/graphics/textfield.swf"
+	align="center"
+	background="false"
+	border="false"
+	css="color:#000000;font-family:Helvetica;font-weight:bold;font-size:14px;text-align:left;"
+	height="20"
+	autoheight="true"
+	autowidth="auto"
+	padding="2"
+	xoffset="0"
+	yoffset="0"
+	selectable="false"
+	zorder="0"
+	visible="false"
+	html=""
+	edge="bottom"
+/>
+
+  <action name="controlBar_urbanbuildMenu">
+    
+    set(controlBar_urbanbutton_pos, 0);
+
+	set(controlBar_urbanbackgroundwidthwhenclosed, 40);
+    set(layer[controlBar_urbanbtn_hidecontrols].x, get(controlBar_urbanbutton_pos));
+    set(layer[controlBar_urbanbtn_showcontrols].x, get(controlBar_urbanbutton_pos));
+    inc(controlBar_urbanbutton_pos, 45);
+
+
+
+      if (device.desktop,
+        set(layer[controlBar_urbanbtn_display_help].x, get(controlBar_urbanbutton_pos));
+        set(layer[controlBar_urbanbtn_close_help].x  , get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+      );
+
+      if (device.fullscreensupport,
+        set(layer[controlBar_urbanbtn_openfs].x , get(controlBar_urbanbutton_pos));
+        set(layer[controlBar_urbanbtn_closefs].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+      );
+
+
+
+      set(layer[controlBar_urbanbtn_autorotate_on].x , get(controlBar_urbanbutton_pos));
+      set(layer[controlBar_urbanbtn_autorotate_off].x, get(controlBar_urbanbutton_pos));
+      inc(controlBar_urbanbutton_pos, 45);
+
+
+
+    if (device.desktop,
+      set(layer[controlBar_urbanbtn_ctrlmode_drag_to].x, get(controlBar_urbanbutton_pos));
+      set(layer[controlBar_urbanbtn_ctrlmode_move_to].x, get(controlBar_urbanbutton_pos));
+      inc(controlBar_urbanbutton_pos, 45);
+    );
+
+
+
+
+
+      if (device.desktop,
+        set(layer[controlBar_urbanbtn_right].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+        set(layer[controlBar_urbanbtn_left].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+      );
+
+      if (device.desktop,
+        set(layer[controlBar_urbanbtn_down].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+        set(layer[controlBar_urbanbtn_up].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+      );
+      if (device.desktop,
+        set(layer[controlBar_urbanbtn_out].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+        set(layer[controlBar_urbanbtn_in].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+      );
+
+      if (scene.count GT 1,
+        set(layer[controlBar_urbanbtn_next_pano].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+        set(layer[controlBar_urbanbtn_prev_pano].x, get(controlBar_urbanbutton_pos));
+        inc(controlBar_urbanbutton_pos, 45);
+      );
+
+
+
+      dec(controlBar_urbanbutton_pos, 5);
+
+      set(controlBar_urbanbackgroundwidthwhenopened, get(controlBar_urbanbutton_pos));
+
+
+      set(layer[controlBar_urban_menu_bg].width, get(controlBar_urbanbackgroundwidthwhenopened));
+	
+	
+
+    </action>
+
+	<events name="controlBar_urbanStartTourEvents" onTourStart="controlBar_urbanCallOnStartTour();" keep="true" />
+	
+	<action name="controlBar_urbanCallOnStartTour">
+		
+		controlBar_urbanshowMenuControls();
+	</action>
+
+
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+<action name="viewControlZoomIn">
+	if(%1,
+		if(%2,
+			if(%2 LT view.fovmin,
+				zoomto(get(view.fovmin));
+			,
+				if(%2 LT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, -1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, -1);
+	);
+</action>
+<action name="viewControlZoomOut">
+	if(%1,
+		if(%2,
+			if(%2 GT view.fovmax,
+				zoomto(get(view.fovmax));
+			,
+				if(%2 GT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, +1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, +1);
+	);
+</action>
+<action name="viewControlZoomStop">
+	set(fov_moveforce, 0);
+</action>
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);set(fullscreen,false);</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);set(fullscreen,true);</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+
+<action name="viewControlMoveUp">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(isfullvertical == false AND calc(view.vlookat-%2) LT view.vlookatmin,
+				moveto(get(view.hlookat), get(view.vlookatmin));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat-%2));
+			);
+		,
+			set(vlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveDown">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(sceneisfull360 == false AND calc(view.vlookat+%2) GT view.vlookatmax,
+				moveto(get(view.hlookat), get(view.vlookatmax));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat+%2));
+			);
+		,
+			set(vlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveLeft">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat-%2) LT view.hlookatmin,
+				moveto(get(view.hlookatmin), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat-%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+		);
+	,
+		set(hlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveRight">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat+%2) GT view.hlookatmax,
+				moveto(get(view.hlookatmax), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat+%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+			
+		);
+	,
+		set(hlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveHoriStop">
+	set(hlookat_moveforce, 0);
+</action>
+<action name="viewControlMoveVertStop">
+	set(vlookat_moveforce, 0);
+</action>
+
+</krpano>
